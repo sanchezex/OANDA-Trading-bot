@@ -1,0 +1,33 @@
+{
+  "account": {
+    "account_id": "YOUR_ACCOUNT_ID_HERE",
+    "access_token": "YOUR_API_TOKEN_HERE",
+    "environment": "practice"
+  },
+  "trading": {
+    "instrument": "EUR_USD",
+    "grid_range": {
+      "lower_level": 1.0700,
+      "upper_level": 1.0900
+    },
+    "grid_settings": {
+      "number_of_grids": 20,
+      "grid_spacing_pips": 10
+    },
+    "position_sizing": {
+      "position_size_per_grid": 10,
+      "units_per_trade": 1000
+    }
+  },
+  "safety": {
+    "max_loss_usd": 50,
+    "max_open_positions": 20,
+    "stop_loss_distance_pips": 50,
+    "take_profit_distance_pips": 15
+  },
+  "monitoring": {
+    "check_interval_seconds": 60,
+    "log_level": "INFO",
+    "alert_email": ""
+  }
+}

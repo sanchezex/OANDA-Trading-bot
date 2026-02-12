@@ -1,0 +1,19 @@
+# Grid Trading Bot Requirements
+# Install with: pip install -r requirements.txt
+
+# OANDA API
+oandapyV20==0.7.2
+
+# Configuration
+python-dotenv==1.0.0
+
+# Data Processing
+pandas==2.1.4
+numpy==1.26.2
+
+# HTTP Requests
+requests==2.31.0
+
+# Utilities
+python-dateutil==2.8.2
+
