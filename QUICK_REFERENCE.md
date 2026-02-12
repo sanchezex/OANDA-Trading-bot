@@ -1,6 +1,6 @@
 # Quick Reference & Cheat Sheet
 
-## 🚀 Quick Commands
+## Quick Commands
 
 ### Initial Setup (First Time)
 
@@ -60,9 +60,9 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 
 ---
 
-## 📋 Configuration Presets
+## Configuration Presets
 
-### 🎓 Beginner (Low Risk)
+### Beginner (Low Risk)
 
 ```json
 {
@@ -92,7 +92,7 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 
 **Expected:** $10-20/month profit
 
-### 🎯 Standard (Recommended)
+### Standard (Recommended)
 
 ```json
 {
@@ -118,7 +118,7 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 
 **Expected:** $40-100/month profit
 
-### 🚀 Advanced (Higher Risk)
+### Advanced (Higher Risk)
 
 ```json
 {
@@ -147,9 +147,9 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 
 ---
 
-## 🌍 Preset Strategies by Pair
+## Preset Strategies by Pair
 
-### EUR/USD (BEST FOR BEGINNERS)
+### EUR/USD (Best for Beginners)
 
 ```json
 {
@@ -168,7 +168,7 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 }
 ```
 
-### GBP/USD (MORE VOLATILE)
+### GBP/USD (More Volatile)
 
 ```json
 {
@@ -187,7 +187,7 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 }
 ```
 
-### USD/JPY (LESS VOLATILE)
+### USD/JPY (Less Volatile)
 
 ```json
 {
@@ -208,24 +208,24 @@ python3 -c "from order_placer import OrderPlacer; from oanda_connector import cr
 
 ---
 
-## 📊 Key Formulas
+## Key Formulas
 
 ### Profit Per Cycle
 
 ```
-Profit per cycle = (Grid spacing - Spread) × Units × 0.0001
+Profit per cycle = (Grid spacing - Spread) x Units x 0.0001
 ```
 
 **Example (EUR/USD):**
 - Grid spacing: 10 pips
 - Spread: 0.8 pips
 - Units: 1,000
-- Profit: (10 - 0.8) × 1,000 × 0.0001 = $0.92
+- Profit: (10 - 0.8) x 1,000 x 0.0001 = $0.92
 
 ### Daily Profit
 
 ```
-Daily profit = Profit per cycle × Expected cycles per day
+Daily profit = Profit per cycle x Expected cycles per day
 ```
 
 **Example:**
@@ -236,56 +236,56 @@ Daily profit = Profit per cycle × Expected cycles per day
 ### Monthly Profit
 
 ```
-Monthly profit = Daily profit × 20 trading days
+Monthly profit = Daily profit x 20 trading days
 ```
 
 **Example:**
 - Daily: $3.68
-- Monthly: $3.68 × 20 = $73.60
+- Monthly: $3.68 x 20 = $73.60
 
 ### Return on Investment (ROI)
 
 ```
-ROI % = (Monthly Profit / Capital Used) × 100
+ROI % = (Monthly Profit / Capital Used) x 100
 ```
 
 **Example:**
 - Monthly profit: $73.60
 - Capital: $200
-- ROI: (73.60 / 200) × 100 = 36.8%
+- ROI: (73.60 / 200) x 100 = 36.8%
 
 ### Total Capital Needed
 
 ```
-Capital = (Units × Current Price / 100,000) × (Grids / 2)
+Capital = (Units x Current Price / 100,000) x (Grids / 2)
 ```
 
 **Example:**
 - Units: 1,000
 - Price: 1.0800
 - Grids: 20
-- Capital: (1,000 × 1.0800 / 100,000) × 10 = $1.08
+- Capital: (1,000 x 1.0800 / 100,000) x 10 = $1.08
 
 ---
 
-## ⚠️ Safety Checklist
+## Safety Checklist
 
 Running bot? Verify:
 
 - [ ] Using PRACTICE account (not live)
 - [ ] Credentials in config.json (not default values)
-- [ ] `python3 test_connection.py` shows ✅
+- [ ] `python3 test_connection.py` shows [OK]
 - [ ] Grid range makes sense for current price
-- [ ] max_loss_usd ≤ 5% of account balance
-- [ ] max_open_positions ≤ 20
-- [ ] Units per trade ≤ 2% of account
+- [ ] max_loss_usd <= 5% of account balance
+- [ ] max_open_positions <= 20
+- [ ] Units per trade <= 2% of account
 - [ ] Reviewed grid strategy guide
 - [ ] Monitor log for errors (tail -f grid_bot.log)
 - [ ] Have plan to stop bot if needed
 
 ---
 
-## 🔍 Troubleshooting Quick Guide
+## Troubleshooting Quick Guide
 
 | Problem | Solution |
 |---------|----------|
@@ -300,7 +300,7 @@ Running bot? Verify:
 
 ---
 
-## 📈 Optimization Timeline
+## Optimization Timeline
 
 ### Week 1: Testing
 - Start with practice account
@@ -311,12 +311,12 @@ Running bot? Verify:
 
 ### Week 2-3: Refinement
 - If profitable: tighten grid (10-15 pips)
-- Add more levels: 10 → 20 grids
+- Add more levels: 10 -> 20 grids
 - Keep position sizes small
 - Track daily P&L
 
 ### Week 4: Scaling
-- If consistent profit: increase units (500 → 1000)
+- If consistent profit: increase units (500 -> 1000)
 - Narrow grid range by 10%
 - Increase check frequency
 - Ready for live? (optional)
@@ -329,30 +329,30 @@ Running bot? Verify:
 
 ---
 
-## 🛠️ File Structure
+## File Structure
 
 ```
 OANDA-Trading-bot/
-├── grid_bot_main.py         ← Main bot (run this!)
-├── oanda_connector.py       ← API connection
-├── market_data.py           ← Price fetching
-├── grid_calculator.py       ← Grid calculations
-├── order_placer.py          ← Order management
-├── safety_checks.py         ← Risk controls
-├── config.json              ← YOUR SETTINGS (edit this!)
-├── requirements.txt         ← Dependencies
-├── test_connection.py       ← Quick test
-├── setup_test.py            ← Full system check
-├── grid_bot.log             ← Bot activity log
-├── README.md                ← Main documentation
-├── SETUP_GUIDE.md           ← Step-by-step setup
-├── STRATEGY_GUIDE.md        ← Trading strategy
-└── QUICK_REFERENCE.md       ← This file!
+├── grid_bot_main.py         <-- Main bot (run this!)
+├── oanda_connector.py       <-- API connection
+├── market_data.py           <-- Price fetching
+├── grid_calculator.py       <-- Grid calculations
+├── order_placer.py          <-- Order management
+├── safety_checks.py          <-- Risk controls
+├── config.json               <-- YOUR SETTINGS (edit this!)
+├── requirements.txt          <-- Dependencies
+├── test_connection.py        <-- Quick test
+├── setup_test.py             <-- Full system check
+├── grid_bot.log              <-- Bot activity log
+├── README.md                 <-- Main documentation
+├── SETUP_GUIDE.md            <-- Step-by-step setup
+├── STRATEGY_GUIDE.md         <-- Trading strategy
+└── QUICK_REFERENCE.md        <-- This file!
 ```
 
 ---
 
-## 💻 Python One-Liners
+## Python One-Liners
 
 Copy & paste these directly:
 
@@ -384,7 +384,7 @@ python3 -c "from safety_checks import SafetyChecker as SC; from oanda_connector 
 
 ---
 
-## 📞 When to Ask for Help
+## When to Ask for Help
 
 Check these resources in order:
 
@@ -409,13 +409,13 @@ Check these resources in order:
 
 ---
 
-## ✅ Pre-Launch Verification
+## Pre-Launch Verification
 
 ```bash
 #!/bin/bash
 # Run this to verify everything is ready
 
-echo "🔍 Running Pre-Launch Checks..."
+echo "Running Pre-Launch Checks..."
 echo
 
 # 1. Check Python
@@ -428,18 +428,18 @@ pip3 list | grep requests
 
 # 3. Check config
 echo -e "\n3. Config file:"
-test -f config.json && echo "✓ config.json exists" || echo "✗ config.json missing"
+test -f config.json && echo "[OK] config.json exists" || echo "[MISSING] config.json missing"
 
 # 4. Test connection
 echo -e "\n4. OANDA connection:"
 python3 test_connection.py
 
-echo -e "\n✨ All checks complete!"
+echo -e "\nAll checks complete!"
 ```
 
 ---
 
-## 📚 Resources
+## Resources
 
 **OANDA Official:**
 - https://www.oanda.com
@@ -461,3 +461,4 @@ echo -e "\n✨ All checks complete!"
 **Last Updated:** February 2026
 
 **Pro Tip:** Save these one-liners in a file called `commands.txt` for quick reference!
+
