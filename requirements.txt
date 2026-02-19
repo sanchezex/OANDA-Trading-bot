@@ -17,3 +17,7 @@ requests==2.31.0
 # Utilities
 python-dateutil==2.8.2
 
+# Web Framework (for Vercel deployment)
+flask==3.0.0
+werkzeug==3.0.1
+
