@@ -52,6 +52,29 @@ def get_strategy():
     return GridStrategy()
 
 
+@app.route('/', methods=['GET'])
+def root():
+    """Root endpoint - redirects to API info."""
+    return jsonify({
+        'service': 'OANDA Grid Trading Bot API',
+        'version': '1.0.0',
+        'endpoints': {
+            'health': '/api/health',
+            'calculator_profit': '/api/calculator/profit (POST)',
+            'calculator_capital': '/api/calculator/capital (POST)',
+            'status': '/api/status (requires auth)',
+            'account': '/api/account (requires auth)',
+            'positions': '/api/positions (requires auth)',
+            'orders': '/api/orders (requires auth)',
+            'grid_init': '/api/grid/init (POST, requires auth)',
+            'grid_levels': '/api/grid/levels (GET, requires auth)',
+            'safety_check': '/api/safety/check (GET, requires auth)',
+            'price': '/api/price/{instrument} (GET, requires auth)'
+        },
+        'docs': 'See VERCEL_DEPLOY.md for more details'
+    })
+
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint."""
