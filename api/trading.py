@@ -545,3 +545,7 @@ def calculate_capital():
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
 
+# For Vercel - export the Flask app
+# Vercel's @vercel/python handler expects 'app' to be the WSGI app
+app = app
+

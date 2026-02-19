@@ -1,13 +1,13 @@
 """
 Configuration settings for the grid trading bot.
-Loads environment variables from .env file.
+Loads environment variables from .env file or Vercel environment.
 """
 import os
 from dotenv import load_dotenv
 from pathlib import Path
 
 
-# Load environment variables from .env file
+# Load environment variables from .env file (for local development)
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
@@ -15,9 +15,9 @@ load_dotenv(dotenv_path=env_path)
 class Config:
     """Main configuration class for the grid trading bot."""
     
-    # OANDA Credentials
-    OANDA_ACCOUNT_ID = os.getenv('OANDA_ACCOUNT_ID')
-    OANDA_ACCESS_TOKEN = os.getenv('OANDA_ACCESS_TOKEN')
+    # OANDA Credentials - Check Vercel env vars first, then .env
+    OANDA_ACCOUNT_ID = os.getenv('OANDA_ACCOUNT_ID') or os.getenv('ACCOUNT_ID')
+    OANDA_ACCESS_TOKEN = os.getenv('OANDA_ACCESS_TOKEN') or os.getenv('ACCESS_TOKEN')
     OANDA_ENVIRONMENT = os.getenv('OANDA_ENVIRONMENT', 'practice')
     
     # API Endpoints
