@@ -1,11 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    {
-      "src": "/api/trading.py",
-      "use": "@vercel/python"
+  "builds": [],
+  "functions": {
+    "api/trading.py": {
+      "runtime": "python3.12"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
