@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [],
   "functions": {
     "api/trading.py": {
       "runtime": "python3.12"
